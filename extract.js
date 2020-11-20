@@ -10,6 +10,10 @@ var extractFilePath = function (url) {
     console.log('The filename is: ' + filename);
 
     filepath = path.resolve(__dirname, 'app', filename);
+    if (filename === 'main.js.map') { 
+        return path.resolve(__dirname, 'app/scripts/dist', 'main.js'); 
+    }
+
     return filepath;
 };
 

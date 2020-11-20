@@ -1,10 +1,14 @@
 var http = require('http');
+
 var fs = require('fs');
-var extractFilePath = require('./extract');
-//var wss = require('./websockets-server');
+var path = require('path');
+var extract = require('./extract');
+const extractFilePath = require('./extract');
+var wss = require('./websockets-server');
 
 var handleError =  function(err, res) { 
     console.log("handling error");
+
     res.writeHead(404);
     res.write("404 File not found");
     res.end();
